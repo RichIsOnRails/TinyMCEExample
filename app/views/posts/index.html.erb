@@ -1,0 +1,23 @@
+<h1>Posts</h1>
+<p><%= link_to "New Post", new_post_path %></p>
+
+<table>
+	<thead>
+		<th>Title</th>
+		<th>Body</th>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</thead>
+	<% @posts.each do |post| %>
+		<tr>
+			<td><%= link_to post.title, post %></td>
+			<td><%= post.body.html_safe %></td>
+			<td>
+				<%= link_to "Edit",edit_post_path(post) %>
+			</td>
+			<td>
+				<%= button_to "Destroy", post_path(post), method: "delete" %>
+			</td>
+		</tr>
+	<% end %>
+</table>

@@ -1,0 +1,15 @@
+<%= tinymce_assets %>
+
+<%= form_for @post do |f| %>
+	<p>
+		<%= f.label :title %><br />
+		<%= f.text_field :title %>
+	</p>
+	<p>
+		<%= f.label :body %>
+		<%= f.text_area :body, class: "tinymce" %>
+	</p>
+	<%= f.submit %>
+<% end %>
+
+<%= tinymce %>
